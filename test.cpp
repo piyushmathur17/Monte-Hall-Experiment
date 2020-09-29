@@ -47,7 +47,8 @@ public:
 	        }
 	    }
 	    
-		std::cout<<"\nThe probability of each number appearing in testing was :\n";
+		std::cout<<"\nThe probability of each number appearing in testing was (should be close to "<< expected_probability <<") :\n";
+		std::cout<<"--------------------------------------------------------------------------------------------------------------------\n";
 		for(int i=0;i<10;i++){
 
 			double P = (double)v[i]/(double)sum;
@@ -55,20 +56,27 @@ public:
 			if(abs(P - expected_probability)> threshold)
 	    		is_random = false;
 		    
-		    std::cout<<i<<": "<<std::setprecision(4)<<P<<", ";
+		    std::cout<<i<<": "<<std::setprecision(4)<<P<<" | ";
 		}
+		std::cout<<"\n--------------------------------------------------------------------------------------------------------------------\n";
 
-		std::cout<<"\n \nThe probabilities of transitions are: \n";
+		std::cout<<"\n \nThe probabilities of transitions are(should be close to "<< expected_probability <<") :\n\n";
+		std::cout<<"\t";
+		for(int i=0;i<10;i++)
+			std::cout<<"    "<<i<<"   |";
+		std::cout<<"\n-------------------------------------------------------------------------------------------------\n";
 		
+		//printing transition probabilities matrix
 		for(int i=0;i<10;i++){
+		    std::cout<<i<<"\t|";
 		    for(int j=0;j<10;j++){
 
 		    	double P = (double)mat[i][j]/(double)row_sum[i];
-
+		    	//difference between P and expected probability should be less than threshold
 		    	if(abs(P - expected_probability)> threshold)
-	    		is_random = false;	
+	    			is_random = false;	
 		        
-		        std::cout<<std::setprecision(4)<<P<<"\t";
+		        std::cout<<std::fixed<<P<<" | ";
 		    }
 		    std::cout<<"\n";
 		}
