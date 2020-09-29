@@ -12,21 +12,21 @@ Many people (including me at one point) and even some mathematicians think that 
 
 Let's see what the experiment tells us!
 
-##test.cpp
+## test.cpp
 This file contains code for testing the uniformity of cpp's rand() function
 Uniformity has been checked using the following 2 citeria:
 1. The occurance of each number in a fixed range should be approximately the same over a large number of iterations
 2. The probability of occurance of a number should be independant of the previously generated number
-
-##experiment.cpp
+ 
+## experiment.cpp
 After establishing credibility of the random function, we can carry on with the simulation of the experiment
 This file has code for generating simulation of the gameshow.The result is calculated using 1000000 simulations.
 
-#Results
-##Test Result
+# Results
+## Test Result
 ![Tests](https://github.com/piyushmathur17/Monte-Hall-Experiment/blob/master/img/testing.png)
 
-##Experiment Result
+## Experiment Result
 ![Experiment](https://github.com/piyushmathur17/Monte-Hall-Experiment/blob/master/img/experiment.png)
 
 As we can see, the percentage of wins by making the switch is around 66.66% (2/3 chance). So we should make the switch afterall! 
